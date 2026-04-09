@@ -97,7 +97,7 @@ int main() {
     for (int i = 0; i < n; i++) { // stop
         ll x0 = trees[i].x, y0 = trees[i].y, r0 = trees[i].r;
 
-        long double l = min(0.0l, dist_point_rect(x0, y0, x1, y1) - r0);
+        long double l = max(0.0l, dist_point_rect(x0, y0, x1, y1) - r0);
 
         links[i].push_back({n + 1, l});
         links[n + 1].push_back({i, l});
