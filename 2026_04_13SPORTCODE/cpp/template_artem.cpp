@@ -23,52 +23,11 @@ constexpr ld PI = acos(-1);
 #define pii pair<int, int>
 
 
-bool comp(pii a, pii b) {
-    return a.second < b.second;
-}
 
 void solution() {
-    int n;
+    ll n;
     cin >> n;
-    vector<pii > a(n);
-    for (int i = 0; i < n; i++) {
-
-        a[i].first = i + 1;
-        cin >> a[i].second;
-    }
-    sort(all(a), comp);
-    vector<int> norm(n);
-    for (int i = 0; i < n; i++) {
-        norm[i] = a[i].first;
-    }
-    vector<int> mx(n), mn(n);
-    if (n & 1) {
-        mx[0] = norm[n - 1];
-        for (int i = 1; i < n; i++) {
-            mx[i] = norm[i - 1];
-        }
-
-
-        for (int i = 0; i < n - 2; i++) {
-            mn[i] = norm[i];
-        }
-        mn[n - 2] = norm[n - 1];
-        mn[n - 1] = norm[n - 2];
-
-    }else {
-        mx[0] = norm[1];
-        mx[1] = norm[0];
-        for (int i = 2; i < n; i++) {
-            mx[i] = norm[i];
-        }
-
-        reverse(all(norm));
-        mn = norm;
-    }
-
-    print(mn);
-    cout << endl;
-    print(mx);
+    
 }
 
 
